@@ -29,7 +29,7 @@ def mutate(chromosome, mutation_rate):
     return chromosome
 
 
-def genetic_algorithm(n, population_size=100, mutation_rate=0.1, max_generations=1500):
+def genetic_algorithm(n, population_size=100, mutation_rate=0.1, max_generations=4000):
     population = [generate_chromosome(n) for _ in range(population_size)]
 
     for generation in range(max_generations):
@@ -82,7 +82,7 @@ def plot_solution(solution):
 
 
 if __name__ == '__main__':
-    N = int(input('Set the board size:'))
+    N = int(input('Set the board size: '))
     solution = genetic_algorithm(N)
     if solution:
         print(f"Solution for {N}x{N} board:")
