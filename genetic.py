@@ -1,5 +1,4 @@
 import random
-
 import matplotlib.pyplot as plt
 
 
@@ -29,13 +28,13 @@ def mutate(chromosome, mutation_rate):
     return chromosome
 
 
-def genetic_algorithm(n, population_size=100, mutation_rate=0.1, max_generations=4000):
+def genetic_algorithm(n, population_size=100, mutation_rate=0.075, max_generations=2000):
     population = [generate_chromosome(n) for _ in range(population_size)]
 
     for generation in range(max_generations):
         population = sorted(population, key=fitness, reverse=True)
 
-        if not generation % 25:
+        if not generation % 50:
             print("Generation: {}. Fitness: {}".format(generation, fitness(population[0])))
         if fitness(population[0]) == 0:
             print("Found Answer on Generation: {}. Fitness: {}".format(generation, fitness(population[0])))
